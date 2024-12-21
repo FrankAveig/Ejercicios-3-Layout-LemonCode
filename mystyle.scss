@@ -1,0 +1,162 @@
+$primary-color: #d9d900;
+$secondary-color: #1d1d1d;
+$text-color: #1d1d1d;
+$hover-color: darken($primary-color, 5%);
+$transition-speed: 0.3s;
+$border-radius: 4px;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin hover-effect {
+  transition: all $transition-speed ease;
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+// Navbar estilos
+.navbar {
+  background-color: $primary-color;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+  &__brand {
+    color: $text-color;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  &__menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__link {
+    color: $text-color;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    display: block;
+    border-radius: $border-radius;
+    font-weight: 500;
+    @include hover-effect;
+  }
+}
+
+// Media query para pantallas grandes
+@media screen and (min-width: 768px) {
+  .navbar {
+    @include flex-center;
+    justify-content: space-between;
+    padding: 0.5rem 2rem;
+
+    &__brand {
+      margin-bottom: 0;
+    }
+
+    &__menu {
+      flex-direction: row;
+      gap: 1rem;
+    }
+
+    &__link {
+      padding: 0.5rem 1rem;
+    }
+  }
+}
+
+// Media query para pantallas muy pequeñas
+@media screen and (max-width: 480px) {
+  .navbar {
+    padding: 0.5rem;
+
+    &__brand {
+      text-align: center;
+    }
+
+    &__menu {
+      align-items: center;
+    }
+
+    &__link {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+.main-content {
+  padding: 2rem;
+  flex-grow: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+
+  h1 {
+    color: $secondary-color;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .author {
+    color: $secondary-color;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-style: italic;
+  }
+
+}
+
+// Actualizar media queries existentes y agregar nuevos estilos responsive
+@media screen and (max-width: 480px) {
+  // ... (mantener estilos navbar existentes)
+
+  .main-content {
+    padding: 1rem;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .author {
+      font-size: 1rem;
+    }
+
+    .content-section {
+      padding: 1rem;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  // ... (mantener estilos navbar existentes)
+
+  .main-content {
+    padding: 3rem;
+
+    .content-section {
+      padding: 3rem;
+    }
+  }
+}

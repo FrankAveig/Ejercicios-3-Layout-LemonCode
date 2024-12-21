@@ -1,0 +1,13 @@
+@use './variables' as v;
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin hover-effect {
+  transition: all v.$transition-speed ease;
+  &:hover {
+    background-color: v.$hover-color;
+  }
+} 
