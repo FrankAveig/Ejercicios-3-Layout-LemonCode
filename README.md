@@ -1,15 +1,17 @@
-# Ejercicios-3-Layout-LemonCode
+# 🍋 Ejercicio 3: Layout Lemoncode
 
-## Menú Responsive
+## 📱 Menú Responsive
 
-El menú de navegación cambia su disposición según el tamaño de la pantalla:
+Este ejercicio implementa una barra de navegación responsive usando Flexbox y Sass, adaptándose a diferentes tamaños de pantalla.
 
-- **Pantallas grandes** (≥ 768px):
+### 🖥️ Breakpoints y Comportamientos
 
-  - Menú horizontal
-  - Logo y enlaces alineados en la misma línea
-  - Padding: 0.5rem 2rem
-  - Enlaces con padding: 0.5rem 1rem
+#### Pantallas Grandes (≥ 768px)
+
+- Menú horizontal
+- Logo y enlaces alineados en la misma línea
+- Padding: 0.5rem 2rem
+- Enlaces con padding: 0.5rem 1rem
 
 - **Pantallas pequeñas** (< 480px):
 
